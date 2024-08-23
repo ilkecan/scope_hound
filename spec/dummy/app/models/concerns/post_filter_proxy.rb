@@ -2,10 +2,10 @@
 
 module Filters
   module PostFilterScopes
-    extend ScopeHound::Models::Concerns::FilterScopable
+    extend ScopeHound::FilterScopable
   end
 
-  class PostFilterProxy < ScopeHound::Models::Concerns::FilterProxy
+  class PostFilterProxy < ScopeHound::FilterProxy
     def self.query_scope = Post
     def self.filter_scopes_module = Filters::PostFilterScopes
   end

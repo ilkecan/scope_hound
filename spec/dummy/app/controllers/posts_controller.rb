@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  include ScopeHound::Controllers::Concerns::FilterableController
+  include ScopeHound::FilterableController
 
   def test_action
     # You can use your gem's logic here
