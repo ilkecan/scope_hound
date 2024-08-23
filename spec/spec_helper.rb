@@ -13,6 +13,11 @@
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require File.expand_path('../spec/dummy/config/environment.rb', __dir__)
+ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '../../../spec/dummy'
+
+require 'rspec/rails'
+
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
