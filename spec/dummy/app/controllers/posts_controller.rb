@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class TestsController < ApplicationController
+class PostsController < ApplicationController
   include ScopeHound::Controllers::Concerns::FilterableController
 
   def test_action
