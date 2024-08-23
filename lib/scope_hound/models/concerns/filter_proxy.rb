@@ -5,7 +5,7 @@ module ScopeHound
     module Concerns
       # Supports the filter by methods. And runs the filter methods to get the result query
       class FilterProxy
-        extend FilterScopable
+        extend ScopeHound::Models::Concerns::FilterScopable
 
         class << self
           # Model Class whose scope will be extended with our filter scopes module
