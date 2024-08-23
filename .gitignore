@@ -13,3 +13,6 @@ Gemfile.lock
 
 # Version Tools
 .tool-versions
+
+# Dummy application
+/spec/dummy/tmp
