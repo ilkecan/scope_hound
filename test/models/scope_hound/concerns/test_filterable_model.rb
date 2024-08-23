@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
-require "app/controllers/scope_hound/concerns/filterable_controller"
+require "app/models/scope_hound/concerns/filterable_model"
 
-class FilterableControllerTest < Minitest::Test
-  include FilterableController
+class TestFilterableModel < Minitest::Test
   def setup
     # Do nothing
   end
