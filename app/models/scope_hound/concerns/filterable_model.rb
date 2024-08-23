@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Delegates all the filtering methods to the filter_proxy
 module FilterableModel
   extend ActiveSupport::Concern
 

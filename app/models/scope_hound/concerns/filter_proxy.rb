@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
+# Supports the filter by methods. And runs the filter methods to get the result query
 class FilterProxy
-  extend FilterScopeable
+  extend FilterScopable
 
   class << self
     # Model Class whose scope will be extended with our filter scopes module
@@ -31,11 +32,11 @@ class FilterProxy
     def calculate_unique_filter_values(scope)
       result = {}
       filter_scopes_module.filter_scopes_paths.each_with_object({}) do |(filter_scope, path)|
-        if path.is_a? Array
-          result[filter_scope] = path.flat_map { |p| scope.pluck(p)}.uniq
-        else
-          result[filter_scope] = scope.pluck(path).uniq
-        end
+        result[filter_scope] = if path.is_a? Array
+                                 path.flat_map { |p| scope.pluck(p) }.uniq
+                               else
+                                 scope.pluck(path).uniq
+                               end
       end
       result
     end

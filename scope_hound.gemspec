@@ -9,7 +9,13 @@ Gem::Specification.new do |spec|
   spec.email = ["cem@kekik.com.tr"]
 
   spec.summary = "A Ruby gem providing MVC concerns for powerful, customizable data filtering."
-  spec.description = "Scope Hound is a gem enhancing the filtering process in Ruby on Rails apps. It introduces a filter proxy system, enabling intuitive filtering at the controller level based on input parameters. An efficient and secure solution for improved data handling in your Rails application."
+  spec.description = <<-DESC
+  Scope Hound is a gem enhancing the filtering process
+  in Ruby on Rails apps. It introduces a filter proxy system, enabling
+  intuitive filtering at the controller level based on input parameters.
+  An efficient and secure solution for improved data handling in your
+  Rails application.
+  DESC
   spec.homepage = "https://github.com/kekik/scope_hound"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"

@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
+# This module provides an interface for attaching easy filtering capabilities to a controller.
+# It acts as a base for models to interact with their controllers. When included in a model,
+# it allows the controller to accept a specific set of filter parameters which are then processed
+# and applied on the model's data for tailored querying and data selection.
+# This is particularly useful when you want to have the flexibility of filtering
+# model data directly from controller parameters.
 module FilterableController
   extend ActiveSupport::Concern
   attr_accessor :all_filtered_records, :unique_filters
@@ -25,7 +31,7 @@ module FilterableController
       all_values
     else
       all_values.select do |_, id|
-        self.unique_filters[attribute]&.include?(id)
+        unique_filters[attribute]&.include?(id)
       end
     end
   end
@@ -35,8 +41,9 @@ module FilterableController
   end
 
   private
+
   def get_attribute_and_associations(attr_name)
-    attribute_parts = attr_name.to_s.split('.')
+    attribute_parts = attr_name.to_s.split(".")
     field = attribute_parts.pop
     associations = attribute_parts
 

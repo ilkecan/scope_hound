@@ -10,3 +10,6 @@ Gemfile.lock
 
 # Editors
 /.idea
+
+# Version Tools
+.tool-versions
